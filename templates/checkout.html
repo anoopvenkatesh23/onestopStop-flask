@@ -1,0 +1,66 @@
+{% extends 'home.html' %}
+
+{% block styles %}
+{{super()}}
+<style>
+    thead {
+        background-color: gainsboro;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold !important;
+    }
+
+    .table,
+    td,
+    tr,
+    th {
+        border: 1px solid black !important;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .total {
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Your cart</h1>
+            <a href="/buy">
+                <div class="btn btn-default">Empty Cart?</div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Title</th>
+                <th>Product Description</th>
+                <th>Product Price</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{product['title']}}</td>
+                <td>{{product['description']}}</td>
+                <td>$ {{product['price']}}</td>
+                <td>{{product['quantity']}}</td>
+                <td>$ {{product['total']}}</td>
+            </tr>
+            {% endfor %}
+            <tr class="total">
+                <td class="text-right" colspan="4">Total </td>
+                <td>$ {{total}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

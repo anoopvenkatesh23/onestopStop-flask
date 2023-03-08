@@ -1,0 +1,64 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+One Stop Shop
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<style>
+    .container-fluid {
+        padding: 0 0;
+    }
+
+    .container {
+        margin-bottom: 4rem;
+    }
+
+    .jumbotron {
+        background-color: brown;
+        border-radius: 0px !important;
+    }
+
+    h1 {
+        font-family: 'Courier New', Courier, monospace;
+        color: white !important;
+        font-size: 50px !important;
+    }
+
+    .btn,
+    .btn:visited {
+        border: 2px solid black;
+        color: black;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bolder;
+        margin-right: 3rem;
+    }
+
+    .btn:hover,
+    .btn:active {
+        color: white;
+        background-color: brown !important;
+        border-color: black !important;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="jumbotron">
+        <h1 class="text-center">Welcome to 1-Stop Shop</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="text-center">
+        <a href="/add" class="btn btn-default">Add a product</a>
+        <a href="/buy" class="btn btn-default">Buy products</a>
+    </div>
+</div>
+{% endblock %}

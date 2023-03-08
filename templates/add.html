@@ -1,0 +1,36 @@
+{% extends 'home.html' %}
+
+{% block styles %}
+{{super()}}
+<style>
+    input {
+        border: 2px solid black !important;
+    }
+
+    .submit {
+        background-color: brown;
+        color: white;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Add a product</h1>
+            <a href="/" class="btn btn-default">Go back</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <form class="form-inline" action="/add" method="POST">
+        <input class="form-control" name="title" placeholder="Title" />
+        <input class="form-control" name="description" placeholder="Description" />
+        <input class="form-control" type="number" name="price" placeholder="$ Price" />
+        <input class="form-control" type="number" name="quantity" placeholder="Quantity Limit" />
+        <input class="form-control" name="image" placeholder="Image Link" />
+        <input class="form-control submit" type="submit" value="Add Product" />
+    </form>
+</div>
+{% endblock %}

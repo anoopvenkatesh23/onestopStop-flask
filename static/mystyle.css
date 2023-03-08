@@ -1,0 +1,11 @@
+.container-fluid {
+    padding: 0 0;
+}
+
+.jumbotron {
+    background-color: brown;
+}
+
+h1 {
+    color: white;
+}
